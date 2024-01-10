@@ -420,7 +420,7 @@
 
     <nav class="navbar navbar-expand-lg d-flex justify-content-between px-5" style="background-color: #fff6e0">
       <div>
-        <a class="navbar-brand" href="/">Home</a>
+        <a class="navbar-brand"  style=" {{ Request::is('/') ? 'font-weight: bold' : '' }}" href="/">Home</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -430,17 +430,17 @@
   
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link " href="/things">Things <span class="sr-only">(current)</span></a>
+            <a class="nav-link" style=" {{ Request::is('things') ? 'font-weight: bold' : '' }}" href="/things">Things <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" style=" {{ Request::is('places') ? 'font-weight: bold' : '' }}">
             <a class="nav-link " href="/places">Places <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
           
             <div class="form-inline my-2 my-lg-0">
               @guest
-              <a href="/create" class="btn btn-outline-success my-2 mr-3 my-sm-0">Registr</a>
-              <a href="/login" class="btn btn-outline-success my-2 my-sm-0">Sign in</a>
+              <a href="/create" class="btn btn-outline-success my-2 mr-3 my-sm-0"  style=" {{ Request::is('create') ? 'font-weight: bold' : '' }}">Registr</a>
+              <a href="/login" class="btn btn-outline-success my-2 my-sm-0"  style=" {{ Request::is('login') ? 'font-weight: bold' : '' }}">Sign in</a>
               @endguest
               @auth
               <p class="my-0 mx-2">{{ Auth::user()->name }}</p>
