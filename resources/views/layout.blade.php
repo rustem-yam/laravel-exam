@@ -420,7 +420,7 @@
 
     <nav class="navbar navbar-expand-lg d-flex justify-content-between px-5" style="background-color: #fff6e0">
       <div>
-        <a class="navbar-brand"  style=" {{ Request::is('/') ? 'font-weight: bold' : '' }}" href="/">Home</a>
+          <a class="navbar-brand list-group-item @activeLinks('/')"   href="/">Home</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
